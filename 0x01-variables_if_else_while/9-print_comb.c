@@ -19,5 +19,4 @@ int main(void)
 
 	putchart('\n');
 	return (0);
-	}
 }
