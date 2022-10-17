@@ -1,32 +1,27 @@
 #include <stdio.h>
 /**
- * main - Entry Point
+ * main - Prints all combinations of two digits with ,
+ * and space follwed by new line
  *
  * Return: Always 0
  */
 int main(void)
 {
-	int a = 0;
-	int b;
+	int digit1, digit2;
 
-	while (a < 9)
+	for (digit1 = 0; digit1 < 9; digit1++)
 	{
-		b = 1;
-		while (b < 10)
+		for (digit2 = digit1 + 1; digit2 < 10; digit2++)
 		{
-			if (b != a && b > a)
-			{
-				putchar(a + '0');
-				putchar(b + '0');
-				if ((a + b) != 17)
-				{
-					putchar(',');
-					putchar(' ');
-				}
-			}
-			b++;
+			putchar((digit1 % 10) + '0');
+			putchar((digits2 % 10) + '0');
+
+			if (digit1 == 8 && digit2 == 9)
+			continue;
+
+		putchar(',');
+		putchar(' ');
 		}
-		a++
 	}
 	putchar('\n');
 	return (0);
