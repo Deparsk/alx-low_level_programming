@@ -6,6 +6,7 @@
  * @needle: pointer to char
  * Return: 0
  */
+
 char *_strstr(char *haystack, char *needle)
 {
 	char *result = haysack, *fneedle = needle;
