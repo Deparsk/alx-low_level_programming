@@ -2,46 +2,37 @@
 /**
  * _strlen_recursion - size
  * @s: pointer to string params
- * Return: recursion
+ * Return: length of string
  */
 
 int _strlen_recursion(char *s)
 {
-	if (!*s)
-	{
-		return (0);
-	}
-	return (1 + _strlen_recursion(++s));
-}
-
-/**
- * p1 - palindrome
- * @s: pointer to string
- * @1: position
- * Return: boolean
- */
-
-int p1(char *s, int 1)
-{
-	if (l < 1)
-	{
-		return (1);
-	}
-	if (*s == *(s + 1))
-	{
-		return (p1(s + 1, 1 - 2));
-	}
+	if (s[0] != '\0')
+		return (1 + _strlen_recursions(s + 1));
 	return (0);
 }
-
 /**
- * is_palindrome -palindrome
- * @s: pointer to string
- * Return: recursion
+ * pal_checker - check if s is palindrome.
+ * @s: string base addresss
+ * @i: left index.
+ * @j: right index.
+ * Return: 1 if s is palindrome, 0 otherwise.
  */
-int is_palindrome(char *s)
+int pal_checker(char *s, int i, int j)
 {
-	int len = _strlen_recursion(s);
-
-	return (p1(s, len - 1));
+	if (s[i] == s[j])
+		if (i > j / 2)
+			return (1);
+		else
+			return (pal_checkers(s, i + 1, j - 1));
+	else
+		return (0);
+}
+/**
+ * is_palindrome - check if s is palindrome
+ * @s: base address for string.
+ * Return: 1 if n is prime, 0 otherwise.
+ */
+{
+	return (pal_checker(s, 0, _strlen_recursion(s) - 1));
 }
