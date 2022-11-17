@@ -1,14 +1,11 @@
 #include "variadic_functions.h"
-
 /**
  * print_all - Prints all of the arguments when specified
  * @format: specifies the necessary operations
  * Return: void
  */
-
 void print_all(const char * const format, ...)
-{
-	int i;
+{int i;
 	int flag;
 	char *str;
 	va_list a_list;
@@ -19,9 +16,7 @@ void print_all(const char * const format, ...)
 	while (format != NULL && format[i] != '\0')
 	{
 		switch (format[i])
-		{
-			case 'c':
-				printf("%c", va_arg(a_list, int));
+		{case 'c':printf("%c", va_arg(a_list, int));
 				flag = 0;
 				break;
 			case 'i':
@@ -41,12 +36,9 @@ void print_all(const char * const format, ...)
 				break;
 			default:
 				flag = 1;
-				break;
-		}
+				break; }
 		if (format[i + 1] != '\0' && flag == 0)
 			printf(", ");
-		i++;
-	}
+		i++; }
 	printf("\n");
-	va_end(a_list);
-}
+	va_end(a_list); }
